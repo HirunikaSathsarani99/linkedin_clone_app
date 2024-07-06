@@ -1,0 +1,61 @@
+import 'package:linkedin_clone_app/model/post_model.dart';
+
+
+final List<Post> dummyPosts = [
+  Post(
+    userName: "Tony Antonio",
+    userHeadline: "Android dev at Nixo",
+    connection: "2nd",
+    userProfileImageUrl: "assets/images/Stories_images/user1.jpg",
+    caption: "Creating opportunity for every member of the global workforce drives everything we do at Link. Together, we strive to empower individuals worldwide by connecting them to meaningful career opportunities, fostering professional growth, and building diverse and inclusive communities. ",
+    time:"1w",
+    imageUrl: "assets/images/posts/post1.png",
+    likes: 87,
+    comments: 30,
+  ),
+  Post(
+    userName: "Sarah Connor",
+    userHeadline: "Web Developer at TechCorp",
+    connection: "2nd",
+    userProfileImageUrl: "assets/images/Stories_images/user2.jpg",
+    caption: "Excited to announce our new hiring spree! Join us and be a part of an amazing team.",
+    time:"2w",
+    imageUrl: "assets/images/posts/post2.png",
+    likes: 120,
+    comments: 45,
+  ),
+  Post(
+    userName: "John Smith",
+    userHeadline: "Software Engineer at Innovatech",
+    connection: "2nd",
+    userProfileImageUrl: "assets/images/Stories_images/user3.jpg",
+    caption: "Just completed a major project. Proud of the team effort!",
+    time:"2d",
+    imageUrl:"assets/images/posts/post3.png",
+    likes: 150,
+    comments: 60,
+  ),
+  Post(
+    userName: "Emily Davis",
+    userHeadline: "Marketing Specialist at Creative Minds",
+    userProfileImageUrl: "assets/images/Stories_images/user4.jpg",
+    connection: "2nd",
+    caption: "Launching our new campaign today. Stay tuned for exciting updates!",
+    time:"1m",
+    imageUrl: "assets/images/posts/post4.jpeg",
+    likes: 98,
+    comments: 25,
+  ),
+  Post(
+    userName: "Michael Brown",
+    userHeadline: "CEO at Brown Enterprises",
+    userProfileImageUrl: "assets/images/Stories_images/user5.jpg",
+    connection: "2nd",
+    caption: "Reflecting on a successful year and looking forward to new challenges.",
+    time:"1w",
+    imageUrl: "assets/images/posts/post5.png",
+    likes: 200,
+    comments: 70,
+  ),
+ 
+];
