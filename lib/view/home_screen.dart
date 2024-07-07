@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:linkedin_clone_app/model/user.dart';
 import 'package:linkedin_clone_app/view/components/search_bar.dart';
 import 'package:linkedin_clone_app/view/styles.dart';
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/main');
+                    SystemNavigator.pop();
                 },
                 child: Text('Yes'),
               ),
