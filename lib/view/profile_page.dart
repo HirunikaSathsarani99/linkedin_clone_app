@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone_app/view/home_screen.dart';
 import 'package:linkedin_clone_app/view/styles.dart';
@@ -379,8 +378,8 @@ class Dashboard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Divider(),
-                  ListTile(
+                  const Divider(),
+                  const ListTile(
                     leading: Icon(Icons.wifi_tethering, color: Colors.black),
                     title: Text('Creator mode: On'),
                     subtitle: Text(

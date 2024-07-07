@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:linkedin_clone_app/view/styles.dart';
 import 'package:linkedin_clone_app/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';

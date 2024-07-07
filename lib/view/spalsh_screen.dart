@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
             DotsIndicator(
               dotsCount: pageCount,
               position: currentPage,
-              decorator: DotsDecorator(
+              decorator: const DotsDecorator(
                   color: Colors.grey, activeColor: AppStyles.primaryColor,
                   ),
                   
@@ -120,7 +120,7 @@ class SubPage extends StatelessWidget {
         ),
         Icon(Icons.arrow_circle_right,color: AppStyles.primaryColor,size: 65,),
         SizedBox( height: screenSize.height * 0.02,),
-        Text(
+        const Text(
             "Land your Job",
             style: TextStyle(fontSize: 16, color: AppStyles.primaryColor,
             fontWeight: FontWeight.bold),
