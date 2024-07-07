@@ -99,6 +99,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
+// ignore: must_be_immutable
 class SubPage extends StatelessWidget {
   SubPage({
     super.key,

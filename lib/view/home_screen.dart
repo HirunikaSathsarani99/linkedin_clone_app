@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone_app/model/user.dart';
+import 'package:linkedin_clone_app/view/components/search_bar.dart';
 import 'package:linkedin_clone_app/view/styles.dart';
 import 'package:linkedin_clone_app/view_model/post_view_model.dart';
 import 'package:linkedin_clone_app/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
-
+import 'dart:math' as math;
 import 'components/bottom_bar.dart';
 import 'components/floating_action_button.dart';
 
@@ -17,9 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
-    Future<bool> _onWillPop() async {
+  Future<bool> _onWillPop() async {
     return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -41,13 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
         )) ??
         false;
   }
+
   @override
   Widget build(BuildContext context) {
     final userViewModel = context.watch<UserViewModel>();
     final user = userViewModel.user;
-    final TextEditingController searchController = TextEditingController();
-
-  
 
     return WillPopScope(
       onWillPop: _onWillPop,
@@ -65,20 +61,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (user != null)
                     GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/profile');
+                        Navigator.pushReplacementNamed(context, '/profile');
                       },
                       child: CircleAvatar(
                         backgroundImage: AssetImage(user.profileImageURL),
                         radius: AppStyles.getScreenSize(context).height * 0.03,
                       ),
                     ),
-      
+
                   Image.asset(
                     "assets/images/linkedIn_logo.png",
                     height: AppStyles.getScreenSize(context).height * 0.08,
                     width: AppStyles.getScreenSize(context).width * 0.3,
                   ),
-      
+
                   Image.asset(
                     "assets/images/notofication_icon.jpg",
                     height: AppStyles.getScreenSize(context).height * 0.1,
@@ -86,31 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: searchController,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-                    suffixIcon: Icon(
-                      Icons.qr_code_scanner,
-                      color: Colors.grey,
-                    ),
-                    hintText: 'Try "Android Dev" ',
-                    hintStyle: TextStyle(
-                        color: const Color.fromARGB(255, 183, 181, 181)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
-              ),
+              SearchBarWidget(),
               StoriesWidget(user: user),
               SizedBox(
                 height: AppStyles.getScreenSize(context).height * 0.02,
@@ -275,22 +247,39 @@ class _PostViewState extends State<PostView> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.thumb_up),
+                                const Icon(
+                                  Icons.thumb_up,
+                                  color: AppStyles.iconColor,
+                                  size: 30.0,
+                                ),
                                 SizedBox(
                                   width:
                                       AppStyles.getScreenSize(context).width *
-                                          0.02,
+                                          0.1,
                                 ),
-                                Icon(Icons.chat_bubble),
+                                const Icon(
+                                  Icons.chat_bubble_rounded,
+                                  color: AppStyles.iconColor,
+                                  size: 30.0,
+                                ),
                                 SizedBox(
                                   width:
                                       AppStyles.getScreenSize(context).width *
-                                          0.02,
+                                          0.17,
                                 ),
-                                Icon(Icons.share)
+                                Transform(
+                                  transform: Matrix4.rotationY(
+                                      math.pi), 
+                                  child: const Icon(Icons.reply, color: AppStyles.iconColor,
+                                  size: 35.0,),
+                                ),
                               ],
                             ),
-                            Icon(Icons.save)
+                            const Icon(
+                              Icons.bookmark,
+                              color: Color.fromARGB(255, 214, 212, 212),
+                              size: 30,
+                            )
                           ],
                         )
                       ],
@@ -390,8 +379,5 @@ class StoriesWidget extends StatelessWidget {
         },
       ),
     );
-    
   }
-  
 }
- 

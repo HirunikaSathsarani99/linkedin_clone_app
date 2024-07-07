@@ -91,6 +91,7 @@ class _SignupPageState extends State<SignupPage> {
                         if (value.length < 6) {
                           return 'Eneter a password with at least 6 characters';
                         }
+                        return null;
                       },
                     ),
                   ],

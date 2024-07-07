@@ -1,6 +1,5 @@
-import 'package:floating_bottom_bar/animated_bottom_navigation_bar.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import '../styles.dart';
 
 class BottomBar extends StatefulWidget {
@@ -23,7 +22,7 @@ class _BottomBarState extends State<BottomBar> {
   }
 
   Color getIconColor(int index){
-   return  _selectedIndex==index? AppStyles.primaryColor:Colors.grey;
+   return  _selectedIndex==index? AppStyles.primaryColor:AppStyles.iconColor;
   }
 
   @override

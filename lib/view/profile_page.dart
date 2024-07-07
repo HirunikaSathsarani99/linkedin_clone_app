@@ -458,7 +458,7 @@ class OpenToWorkWidget extends StatelessWidget {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(user!.openToWork[index].position),
+                        Text(user.openToWork[index].position),
                         Text(
                           'See all details',
                           style: TextStyle(color: Colors.blue),
