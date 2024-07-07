@@ -68,53 +68,53 @@ class _LoginPageState extends State<LoginPage> {
                           if (value!.isEmpty) {
                             return "Please enter your email or phone number";
                           }
+
                           final emailRegExp = RegExp(
                               r'^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
                           final phoneRegExp = RegExp(r'^\+?[0-9]{10,}$');
 
-                          if (emailRegExp.hasMatch(value) || (!phoneRegExp.hasMatch(value))) {
-                           
-                              return 'Please enter a valid email address or phone number';
+                          if (!emailRegExp.hasMatch(value) &&
+                              !phoneRegExp.hasMatch(value)) {
+                            return 'Please enter a valid email address or phone number';
                           }
-                          
+
                           return null;
                         },
                       ),
-                    
-                
-                SizedBox(height: ScreenSize.width * 0.05),
 
-                //password
-                TextFormField(
-                  controller: passwordController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Please enter your password";
-                    }
-                    
-                    return null; 
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle:
-                          const TextStyle(fontSize: 18, color: Colors.grey),
-                      border: OutlineInputBorder(),
-                      suffixIcon: TextButton(
-                          onPressed: () {
-                            setState(() {
-                              passwordVisble = !passwordVisble;
-                            });
-                          },
-                          child: passwordVisble
-                              ? const Text(
-                                  "Hide",
-                                  style: TextStyle(color: Colors.blue),
-                                )
-                              : const Text("Show",
-                                  style: TextStyle(color: Colors.blue)))),
-                  obscureText: !passwordVisble,
-                ),
-                ],
+                      SizedBox(height: ScreenSize.width * 0.05),
+
+                      //password
+                      TextFormField(
+                        controller: passwordController,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Please enter your password";
+                          }
+
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                            labelText: 'Password',
+                            labelStyle: const TextStyle(
+                                fontSize: 18, color: Colors.grey),
+                            border: OutlineInputBorder(),
+                            suffixIcon: TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    passwordVisble = !passwordVisble;
+                                  });
+                                },
+                                child: passwordVisble
+                                    ? const Text(
+                                        "Hide",
+                                        style: TextStyle(color: Colors.blue),
+                                      )
+                                    : const Text("Show",
+                                        style: TextStyle(color: Colors.blue)))),
+                        obscureText: !passwordVisble,
+                      ),
+                    ],
                   ),
                 ),
 
